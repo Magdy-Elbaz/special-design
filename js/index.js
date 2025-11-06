@@ -160,6 +160,8 @@ randomBg.forEach(sp => {
     });
 });
 
+randomImg();
+
 // Get Array of Imgs
 let imgsArray = ["01.jpg", "02.jpg", "03.jpg", "04.jpg", "09.jpg"];
 
@@ -283,4 +285,5 @@ function scrollToSomewhere(headerAreaLi, el, elheader) {
             elheader.classList.add("active");
         });
     };
+
 };
