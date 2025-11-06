@@ -9,7 +9,7 @@ let randomBg = document.querySelectorAll(".option-box span");
 let imageAbout = document.querySelector(".about .image-box img");
 // Start landing page Element
 let landingPage = document.querySelector(".landing-page");
-let bgOption;
+let bgOption = true;
 let backInterval;
 
 if (mainColors !== null) {
@@ -31,7 +31,7 @@ if (mainColors !== null) {
     } else {
         imageAbout.src = "../images/about-blue.jpg";
     };
-}
+};
 
 if (mainBgRondom !== null) {
     if (mainBgRondom === "true") {
@@ -52,6 +52,11 @@ if (mainBgRondom !== null) {
     };
 };
 
+document.querySelector(".btn-reset").addEventListener("click", () => {
+    localStorage.clear();
+    window.location.reload();
+});
+
 document.querySelectorAll(".header-area ul li a").forEach(li => {
     li.addEventListener("click", e => {
         document.querySelector(`.${e.target.id}`).scrollIntoView({
@@ -59,11 +64,6 @@ document.querySelectorAll(".header-area ul li a").forEach(li => {
         });
     });
 });
-
-document.querySelector(".btn-reset").addEventListener("click", () => {
-    localStorage.clear();
-    window.location.reload();
-})
 
 // eindow scroll
 
@@ -161,9 +161,8 @@ randomBg.forEach(sp => {
 });
 
 randomImg();
-
 // Get Array of Imgs
-let imgsArray = ["01.jpg", "02.jpg", "03.jpg", "04.jpg", "09.jpg"];
+let imgsArray = ["01.jpg", "02.jpg", "03.jpg", "04.jpg", "05.jpg"];
 
 function randomImg() {
 
@@ -285,5 +284,4 @@ function scrollToSomewhere(headerAreaLi, el, elheader) {
             elheader.classList.add("active");
         });
     };
-
 };
