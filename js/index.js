@@ -65,6 +65,17 @@ document.querySelectorAll(".header-area ul li a").forEach(li => {
     });
 });
 
+let toggle_menu = document.querySelector(".toggle-menu");
+
+toggle_menu.addEventListener("click", (e) => {
+    toggle_menu.classList.toggle("active");
+    if (toggle_menu.classList.value === "toggle-menu active") {
+        document.querySelector(".header-area ul").style.cssText = "right: 0;"
+    }else {
+        document.querySelector(".header-area ul").style.cssText = "right: -300px;";
+    }
+});
+
 // eindow scroll
 
 let liAbout = document.getElementById("about");
@@ -239,8 +250,9 @@ ourGallery.forEach(img => {
                 popupImg.src = num1
             } else {
                 let num1 = popupImg.src.replace(popupImg.src.slice(-6, -4), "0" + String(+popupImg.src.slice(-6, -4) + 1));
-                popupImg.src = num1
-            }
+                popupImg.src = num1;
+                console.log(num1);
+            };
 
             if (popupImg.src.includes("10.jpg") === true) {
                 greaterThan.style.display = "none";
@@ -254,7 +266,7 @@ ourGallery.forEach(img => {
 
         lassThan.addEventListener("click", () => {
             let num1 = popupImg.src.replace(popupImg.src.slice(-6, -4), "0" + String(+popupImg.src.slice(-6, -4) - 1));
-            popupImg.src = num1
+            popupImg.src = num1;
 
             if (popupImg.src.includes("10.jpg") === true) {
                 greaterThan.style.display = "none";

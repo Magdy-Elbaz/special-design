@@ -140,9 +140,13 @@ body {
 .landing-page {
     min-height: 100vh;
     background: url(../images/02.jpg) center/cover;
-    background-size: cover;
     position: relative;
+}
 
+@media (max-width: 767px) {
+    .landing-page {
+        min-height: 115vh;
+    }
 }
 
 .landing-page .overlay {
@@ -191,6 +195,70 @@ body {
     cursor: pointer;
 }
 
+.landing-page .header-area .toggle-menu {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-right: 30px;
+    cursor: pointer;
+    display: none;
+}
+
+.landing-page .header-area .toggle-menu span {
+    background-color: white;
+    width: 100%;
+    height: 4px;
+    border-radius: 10px;
+    transition: .3s;
+}
+
+.landing-page .header-area .toggle-menu.active span:first-child,
+.landing-page .header-area .toggle-menu.active span:last-child {
+    position: absolute;
+    top: 30%;
+    background-color: red;
+}
+
+.landing-page .header-area .toggle-menu.active span:first-child {
+    rotate: 50deg;
+}
+
+.landing-page .header-area .toggle-menu.active span:nth-child(2) {
+    display: none;
+}
+
+.landing-page .header-area .toggle-menu.active span:last-child {
+    rotate: -50deg;
+}
+
+@media (max-width: 767px) {
+    .landing-page .header-area .toggle-menu {
+        display: flex;
+    }
+
+    .landing-page .header-area ul {
+        flex-direction: column;
+        position: absolute;
+        right: -300px;
+        top: 0;
+        padding: 50px 0;
+        width: 45%;
+        height: 130vh;
+        background-color: #eee;
+        text-align: center;
+        gap: 50px;
+        transition: .3s;
+    }
+
+    .landing-page .header-area ul li a {
+        color: black;
+    }
+}
+
+
 .landing-page .introduction {
     position: absolute;
     left: 50%;
@@ -218,6 +286,16 @@ body {
     margin: 0;
 }
 
+@media (max-width: 767px) {
+    .landing-page .introduction h1 {
+        font-size: 18px;
+    }
+
+    .landing-page .introduction p {
+        font-size: 14px;
+    }
+}
+
 /* End landing page */
 
 /* Start About */
@@ -226,6 +304,12 @@ body {
     padding: 50px 0;
     display: flex;
     align-items: center;
+}
+
+@media (max-width: 767px) {
+    .about {
+        flex-direction: column;
+    }
 }
 
 .about .info {
@@ -278,6 +362,13 @@ body {
     padding: 15px;
     margin: 15px 30px;
     border-radius: 10px;
+}
+
+@media (max-width: 767px) {
+    .skills .skill-box {
+        flex-direction: column;
+        gap: 7px;
+    }
 }
 
 .skills .skill-box .skill-name {
@@ -336,6 +427,13 @@ body {
     cursor: pointer;
 }
 
+@media (max-width: 767px) {
+    .gallery .images-box img {
+        width: 300px;
+        height: 180px;
+    }
+}
+
 .popup-overlay {
     position: fixed;
     background-color: rgb(0, 0, 0, .7);
@@ -367,6 +465,13 @@ body {
 .popup-box img {
     width: 500px;
     height: 300px;
+}
+
+@media (max-width: 767px) {
+    .popup-box img {
+        width: 300px;
+        height: 200px;
+    }
 }
 
 .popup-box .closebtn {
@@ -407,6 +512,22 @@ body {
 
 .popup-box .lassThan {
     left: -120px;
+}
+
+@media (max-width: 767px) {
+
+    .popup-box .greaterThan,
+    .popup-box .lassThan {
+        top: 110%;
+    }
+
+    .popup-box .greaterThan {
+        right: 30%;
+    }
+
+    .popup-box .lassThan {
+        left: 30%;
+    }
 }
 
 /* End Gallery */
@@ -609,6 +730,7 @@ body {
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    gap: 15px;
 }
 
 .testimonials .info {
@@ -657,18 +779,25 @@ body {
 .contact {
     padding: 130px 0;
     background: url(../images/contact.jpg) center/cover;
-    text-align: center ;
+    text-align: center;
 }
 
 .contact h2 {
     color: var(--main-color);
     margin-bottom: 50px;
 }
+
 .contact form {
     display: flex;
     align-self: center;
     justify-content: center;
     gap: 15px;
+}
+
+@media (max-width: 767px) {
+    .contact form {
+        flex-direction: column;
+    }
 }
 
 .contact form .row-left,
@@ -681,6 +810,18 @@ body {
 
 .contact form .row-right {
     margin-left: 20px;
+}
+
+@media (max-width: 767px) {
+
+    .contact form .row-left,
+    .contact form .row-right {
+        width: 100%;
+    }
+
+    .contact form .row-right {
+        margin-left: 0;
+    }
 }
 
 .contact form .row-left input,
@@ -704,6 +845,18 @@ body {
     font-size: 16px;
     font-weight: bold;
 }
+
+@media (max-width: 767px) {
+    .contact form .row-right textarea {
+        height: 90%;
+        width: 95%;
+    }
+
+    .contact form .row-left input {
+        width: 95%;
+    }
+}
+
 /* End contact */
 /* Start footer */
 footer {
@@ -715,7 +868,8 @@ footer {
     justify-content: center;
 }
 
-footer  p {
+footer p {
     margin: 0;
 }
+
 /* End footer */
