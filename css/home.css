@@ -28,7 +28,7 @@ body {
     background-color: rgb(255, 255, 255);
     width: 200px;
     z-index: 100;
-    min-height: 100vh;
+    min-height: 110vh;
     padding: 10px;
     transition: .3s;
 }
@@ -141,12 +141,6 @@ body {
     min-height: 100vh;
     background: url(../images/02.jpg) center/cover;
     position: relative;
-}
-
-@media (max-width: 767px) {
-    .landing-page {
-        min-height: 115vh;
-    }
 }
 
 .landing-page .overlay {
